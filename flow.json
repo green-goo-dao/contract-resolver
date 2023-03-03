@@ -1,0 +1,39 @@
+{
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"sandboxnet": "access.sandboxnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"contracts": {
+		"Resolver": "./contracts/Resolver.cdc",
+		"NonFungibleToken": "./contracts/standard/NonFungibleToken.cdc",
+		"MetadataViews": "./contracts/standard/MetadataViews.cdc",
+		"ExampleNFT": "./contracts/standard/ExampleNFT.cdc",
+		"FungibleToken": {
+			"source": "./contracts/standard/FungibleToken.cdc",
+			"aliases": {
+			  "emulator": "0xee82856bf20e2aa6",
+			  "testnet": "0x9a0766d93b6608b7",
+			  "mainnet": "0xf233dcee88fe0abe"
+			}
+		  }
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "ca4e0592054824f8966a799c07456646b6af01ae8aebe6b69b484e3e4b2d9dc7"
+		}
+	},
+	"deployments": {
+		"emulator": {
+			"emulator-account": [
+				"Resolver",
+				"NonFungibleToken",
+				"MetadataViews",
+				"ExampleNFT"
+			]
+		}
+	}
+}
+ 
